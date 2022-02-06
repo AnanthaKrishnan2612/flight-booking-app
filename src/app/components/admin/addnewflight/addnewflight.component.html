@@ -1,0 +1,74 @@
+<!-- <app-adminnavbar></app-adminnavbar> -->
+
+<div class="example-container" (submit)="addFlights()">
+
+    <h1>Add Flight</h1>
+  
+    <form [formGroup]="addFlightForm">
+      
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Flight Number</mat-label>
+         <input matInput type="text" formControlName="flightNumber">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Airline</mat-label>
+        <input matInput type="text" formControlName="airline">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>From</mat-label>
+        <input matInput type="text" formControlName="startingLocation">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>To</mat-label>
+        <input matInput type="text" formControlName="destination">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Departure Date</mat-label>
+        <input matInput type="date" formControlName="departureDate">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Departure Time</mat-label>
+        <input matInput type="time" formControlName="departureTime">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Return Date</mat-label>
+       <input matInput type="date" formControlName="returnDate">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Return Date</mat-label>
+        <input matInput type="time" formControlName="returnTime">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Total  Seats</mat-label>
+        <input matInput type="number" formControlName="totalSeats">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Ticket Cost</mat-label>
+        <input matInput type="number" formControlName="ticketCost">
+      </mat-form-field>
+  
+      <div> <button mat-raised-button color="primary" type="submit" [disabled]="addFlightForm.invalid">Add Flights</button></div>
+     
+      
+  
+      <!-- <mat-form-field appearance="fill"
+          [hideRequiredMarker]="hideRequiredControl.value"
+          [floatLabel]="floatLabelControl.value">
+        <mat-select required>
+          <mat-option>-- None --</mat-option>
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+        <mat-label><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> label</i></mat-label>
+      </mat-form-field> -->
+    </form>
+  </div>

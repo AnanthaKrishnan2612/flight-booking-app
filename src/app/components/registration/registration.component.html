@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div class="example-container" fxLayout="row" fxLayoutAlign="center center" (submit)="register()">
+
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Enter your credentials</mat-card-title>
+    </mat-card-header>
+
+  <form class="registration-form" [formGroup]="registrationForm">
+    
+    <div>
+    <mat-form-field class="registration-entry" appearance="outline" >
+      <mat-label>User Name</mat-label><br/>
+       <input matInput type="text" formControlName="username"><br/>
+       <span *ngIf="!!registrationForm.controls['username'].errors">
+        <!-- <span *ngIf="!!registrationForm.controls['username'].errors['required']">Username can not be empty<br/></span> -->
+        <span *ngIf="!!registrationForm.controls['username'].errors['minlength']">Minimum 4 chars required<br/></span>
+        <span *ngIf="!!registrationForm.controls['username'].errors['maxlength']">Maximum 12 chars required<br/></span>
+    </span>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="registration-entry"  appearance="outline">
+      <mat-label>Email</mat-label><br/>
+      <input matInput type="email" formControlName="email"><br/>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="registration-entry" appearance="outline">
+      <mat-label>Password</mat-label><br/>
+      <input matInput type="password" formControlName="password"><br/>
+    </mat-form-field>
+  </div>
+   
+
+    <div> <button mat-raised-button class="btn-block" color="primary" type="submit" [disabled]="registrationForm.invalid">Sign Up</button></div>
+    <div *ngIf="isSuccessful"> Registration Success</div>
+  </form>
+</mat-card>
+</div>

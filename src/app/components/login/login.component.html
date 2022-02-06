@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div class="example-container" fxLayout="row" fxLayoutAlign="center center" (submit)="onSubmit()">
+    <mat-card class="box">
+        <mat-card-header>
+          <mat-card-title>Enter your credentials</mat-card-title>
+        </mat-card-header>
+
+  
+    <form class = "login-form"[formGroup]="loginForm">
+      
+    <p>
+      <mat-form-field class = "login-entry" appearance="outline">
+        <mat-label>User Name</mat-label>
+         <input matInput type="text" formControlName="userName">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class = "login-entry" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+      </mat-form-field>
+    </p>
+     
+  
+      <div> <button mat-raised-button color="primary" class="btn-block" type="submit" [disabled]="loginForm.invalid">Login</button></div>
+      
+  
+      <!-- <mat-form-field appearance="fill"
+          [hideRequiredMarker]="hideRequiredControl.value"
+          [floatLabel]="floatLabelControl.value">
+        <mat-select required>
+          <mat-option>-- None --</mat-option>
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+        <mat-label><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> label</i></mat-label>
+      </mat-form-field> -->
+    </form>
+</mat-card>
+  </div>

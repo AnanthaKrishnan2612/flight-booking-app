@@ -1,0 +1,46 @@
+<app-bookingnavbar></app-bookingnavbar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-white mb-5">
+                <div id="print" class="card-heading clearfix border-bottom mb-4">
+                    <h4 class="card-title">Booking History</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-dark">
+                        <thead>
+                          <tr style="color:rgb(233, 111, 30)">
+                            <th>PNR Number</th>
+                            <th>Email</th>
+                            <th>User Name</th>
+                            <th>Flight-Number</th>
+                            <th>Origin</th>
+                            <th>Destination</th>
+                            
+                            <!-- <th>No of Seats</th> -->
+                            <!-- <th>Booking Status</th> -->
+                            <th></th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr id="historyList" *ngFor="let value of this.bookingHistory">
+                              <td>{{value.pnrNumber}}</td>
+                            <td>{{ value.eMail}}</td>
+                            <td> {{value.userName}}</td>
+                            <td>{{value.flightNumber}}</td>
+                            <td>{{ value.startingLocation}}</td>
+                            <td> {{value.destination}}</td>
+                            <!-- <td> {{value.noOfSeats}}</td> -->
+                            <!-- <td><p style="color:rgb(126, 212, 126)">{{value.bookingStatus}}</p></td> -->
+                            <td><button  type="submit" class="btn btn-primary" (click)="cancelTicket(value.pnrNumber)">Cancel</button></td>
+                            <td><button type="submit" class="btn btn-primary" (click)="openPDF()">Download</button></td>                         
+                          </tr>
+                        </tbody>
+                      </table>                
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
